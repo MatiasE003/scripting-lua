@@ -102,7 +102,7 @@ Packs_:CreateToggle({
     Callback = function(x)
         shared["Open"] = x
         while shared["Open"] do
-            task.wait()
+            task.wait(5)
             if not shared["Open"] then
                 break
             end
