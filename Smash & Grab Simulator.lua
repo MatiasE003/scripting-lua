@@ -1,21 +1,19 @@
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+--Librería
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))();
 
+--variables
 local function addPower()
     local args = {
-        [1] = game:GetService("Players").LocalPlayer
+        [1] = game:GetService("Players").LocalPlayer;
     }
-    game:GetService("ReplicatedStorage").Knif.Knit.Services.PlayerService.RF.AddPlayerPower:InvokeServer(unpack(args))
+    game:GetService("ReplicatedStorage").Knif.Knit.Services.PlayerService.RF.AddPlayerPower:InvokeServer(unpack(args));
 end
 
 local function breakGlass()
-
-
     local args = {
-        [1] = game:GetService("Players").LocalPlayer
+        [1] = game:GetService("Players").LocalPlayer;
     }
-
-    game:GetService("ReplicatedStorage").Knif.Knit.Services.PlayerService.RF.PlayerAttack:InvokeServer(unpack(args))
-
+    game:GetService("ReplicatedStorage").Knif.Knit.Services.PlayerService.RF.PlayerAttack:InvokeServer(unpack(args));
 end
 --------------------------------------------------------------------Ventana--------------------------------------------------------------------
 local Window = Rayfield:CreateWindow({
@@ -44,9 +42,9 @@ local Window = Rayfield:CreateWindow({
     }
  })
 
- local Tab = Window:CreateTab("Main", 4483362458)
+local Tab = Window:CreateTab("Main", 4483362458);
 
-Tab:CreateSection("Auto break")
+Tab:CreateSection("Auto break");
 
 Tab:CreateToggle({
     Name = "Auto break",
@@ -55,8 +53,8 @@ Tab:CreateToggle({
     Callback = function(x)
         shared["AutoBreak"] = x
         while shared["AutoBreak"] do
-            task.wait(0.1)
-            breakGlass()
+            task.wait(0.1);
+            breakGlass();
         end
     end,
 })
@@ -68,8 +66,8 @@ Tab:CreateToggle({
     Callback = function(x)
         shared["AddPower"] = x
         while shared["AddPower"] do
-            task.wait(0.1)
-            addPower()
+            task.wait(0.1);
+            addPower();
         end
     end,
 })
