@@ -1,4 +1,4 @@
-shared.hatch = false
+shared.hatch = true
 shared.Silo = "MegaSilo2"
 
 function Hatch()
